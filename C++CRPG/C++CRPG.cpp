@@ -2,24 +2,46 @@
 //
 
 #include <iostream>
+#include "World.h"
+#include "Player.h"
 using std::cout;
 using std::cin;
 using std::string;
 
 int main()
 {
+    Player player = Player(); //Makes player
+    string input = ""; //Will hold player input
+    World world = World(); //Creates world
 
-    int x = 0;
-    string input = "";
-    int array[] = { 0, 3, 5 };
-    string strArray[5];
-
-    cout << "What is your name?";
+    //Gets player name
+    cout << "What is your name? > ";
     cin >> input;
+    player.Name = input;
 
-    cout << input << "\n";
+    //Welcomes player
+    cout << "Welcome " << player.Name << "!\n";
 
-    cout << "Hello World!\n";
+    //Game loop
+    while (true)
+    {
+        //Gets input
+        cout << "What do you want to do? > ";
+        cin >> input;
+
+        //Reacts to input
+        inputHandler(input);
+    }
+}
+
+void inputHandler(string input)
+{
+    for (int i = 0; i < input.length(); i++)
+    {
+        input[i] = tolower(input[i]);
+    }
+
+    cout << input;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

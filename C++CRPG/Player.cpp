@@ -1,7 +1,5 @@
 #include "Player.h"
 #include "World.h"
 
-void Player::ClassInteractionTest(World world)
-{
-	
-}
+//Class interaction test (Still here for future reference)
+void Player::ClassInteractionTest(World world) {}
